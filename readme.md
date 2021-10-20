@@ -1,7 +1,4 @@
-# Protocole ODM Import Thomas
-
-Do Date: October 14, 2021
-Done: No
+# Protocole ODM Import
 
 1. Install anaconda on your computer.
 2. Copy the directory to your computer.
