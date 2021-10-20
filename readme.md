@@ -2,7 +2,8 @@
 
 1. Install anaconda on your computer.
 2. Copy the directory to your computer.
-3. Open the Anaconda prompt and navigate to the project directory using the command:
+3. Inside the directory, create empty `Input` and `Output` folders.
+4. Open the Anaconda prompt and navigate to the project directory using the command:
 
     ```bash
     cd /path/to/project/directory
