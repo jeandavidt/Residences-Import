@@ -1,0 +1,12 @@
+# This is the configuration file for the data ingestion script for 
+# the university residence surveillance program at McGill University and Université Laval
+
+
+data_folder: "./Input" 
+csv_folder: "./Output"
+static_data: "Residences-COVID_Static_Data.xlsx"
+
+
+virus_data: "CentrEau-COVID_Resultats_McGill&Laval_Student_Residences.xlsx"
+virus_sheet_name: "Data Daily Samples (McGill)"
+virus_lab: "frigon_lab"

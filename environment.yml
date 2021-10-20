@@ -23,7 +23,9 @@ dependencies:
   - pytest
   - python-kaleido
   - unidecode
+  - pyyaml
   - pip:
     - geojson-rewind
     - geomet
+    - easydict
 
