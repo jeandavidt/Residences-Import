@@ -143,5 +143,5 @@ cython_debug/
 
 .gitignore
 .vscode/
-Input/
-Output/
+Input/*
+Output/*

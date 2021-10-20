@@ -1,4 +1,4 @@
-# Protocole ODM Import
+# Protocol
 
 1. Install anaconda on your computer.
 2. Copy the directory to your computer.
@@ -8,7 +8,7 @@
     cd /path/to/project/directory
     ```
 
-4. Create a new conda environment named `residences` using the command:
+4. (Only do this the first time you run the script) Create a new conda environment named `residences` using the command:
 
     ```bash
     conda env create --file environment.yml --name residences
