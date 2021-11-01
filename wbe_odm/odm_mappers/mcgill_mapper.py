@@ -12,6 +12,7 @@ from wbe_odm.odm_mappers.csv_mapper import CsvMapper
 
 
 LABEL_REGEX = r"[a-zA-Z]+_[0-9]+(\.[0-9])?_[a-zA-Z0-9]+_[a-zA-Z0-9]+"
+RESIDENCE_REGEX = r"[0-9]*\.?[0-9]*-[a-zA-Z0-9_]+([-][0-9]*)?"
 
 directory = os.path.dirname(__file__)
 
@@ -223,8 +224,16 @@ class MapperFuncs:
             if re.match(LABEL_REGEX, label_id):
                 label_parts = label_id.split("_")
                 return "_".join(label_parts[0:2])
+            elif re.match(RESIDENCE_REGEX, label_id):
+                num, rest = label_id.split("-")[0], label_id.split("-")[1]
+                place  = rest.split("_")[0]
+                if place.lower() == "mcgill":
+                    clean_place = "mc"
+                else:
+                    clean_place = "qc" if place.lower() == "qc" else place.lower()
+                return f"{clean_place}_{num}"
             else:
-                return ""
+                return "unrecognized site"
         clean_label_series = labels.apply(lambda x: cls.clean_labels(x))
         return clean_label_series.apply(lambda x: extract_from_label(x))
 
