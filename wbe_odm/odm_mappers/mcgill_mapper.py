@@ -534,6 +534,8 @@ def parse_sheet(mapping, static, lab_data, processing_functions, lab_id,):
         table_df = pd.concat(sub_dfs, axis=0, ignore_index=True)
         if table in ["WWMeasure", "SiteMeasure"]:
             table_df = table_df.dropna(subset=["value"])
+        elif table == "Sample":
+            table_df = table_df.loc[table_df["siteID"] != "unrecognized site"]
         tables[table] = table_df
     return tables
 
